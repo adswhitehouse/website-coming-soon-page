@@ -55,4 +55,114 @@ select {
 /* Body */
 body {
   font-family: "Geist Mono", serif;
+  background: url(./images/background.png) no-repeat center center / cover;
+  position: relative;
+  color: #fff;
+}
+
+.rocket {
+  position: absolute;
+  opacity: 0.3;
+  top: 50%;
+  bottom: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 15rem;
+}
+
+/* Header */
+header {
+  padding: 1rem 10%;
+}
+
+header img {
+  width: 10rem;
+}
+
+/* Main */
+main {
+  padding-inline: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 80.64px);
+  margin-top: -1rem;
+}
+
+h1 {
+  font-size: 3.25rem;
+  padding-block: 1rem;
+}
+
+h1 span {
+  color: #ff4856;
+}
+
+.countdown {
+  display: flex;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+  display: flex;
+  flex-direction: column;
+}
+
+.days-number,
+.hours-number,
+.minutes-number,
+.seconds-number {
+  font-size: 3.25rem;
+}
+
+.learn-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background-color: transparent;
+  color: #fff;
+  margin-top: 1.5rem;
+  border: 2px solid #fff;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.learn-more i {
+  font-size: 1.75rem;
+}
+
+/* Media Query */
+@media screen and (max-width: 35rem) {
+  main {
+    text-align: center;
+    align-items: center;
+  }
+
+  .countdown {
+    justify-content: center;
+  }
+
+  .learn-more {
+    margin-inline: auto;
+  }
+
+  .rocket {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h1,
+  .days-number,
+  .hours-number,
+  .minutes-number,
+  .seconds-number {
+    font-size: 2.5rem;
+  }
 }
