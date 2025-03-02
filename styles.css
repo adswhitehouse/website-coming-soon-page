@@ -58,16 +58,31 @@ body {
   background: url(./images/background.png) no-repeat center center / cover;
   position: relative;
   color: #fff;
+  overflow: hidden;
 }
 
 .rocket {
   position: absolute;
   opacity: 0.3;
-  top: 50%;
-  bottom: 50%;
-  transform: translateY(-50%);
-  right: 0;
+  bottom: 0;
+  right: 5rem;
   width: 15rem;
+  animation: rocket 4s linear infinite;
+}
+
+@keyframes rocket {
+  0% {
+    opacity: 0;
+    bottom: 0;
+  }
+
+  25% {
+    opacity: 0.3;
+    bottom: 25%;
+  }
+  100% {
+    bottom: 100%;
+  }
 }
 
 /* Header */
@@ -89,6 +104,7 @@ main {
   margin-top: -1rem;
 }
 
+/* H1 */
 h1 {
   font-size: 3.25rem;
   padding-block: 1rem;
@@ -98,6 +114,7 @@ h1 span {
   color: #ff4856;
 }
 
+/* Countdown */
 .countdown {
   display: flex;
   gap: 1.25rem;
@@ -119,10 +136,10 @@ h1 span {
   font-size: 3.25rem;
 }
 
+/* Learn More Button */
 .learn-more {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
   padding: 0.75rem;
   background-color: transparent;
@@ -153,9 +170,8 @@ h1 span {
   }
 
   .rocket {
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
   }
 
   h1,
