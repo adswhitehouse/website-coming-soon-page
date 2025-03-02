@@ -16,7 +16,8 @@ function updateDate(number, variable) {
   }
 }
 
-setInterval(() => {
+let interval;
+interval = setInterval(() => {
   // Current time in milliseconds
   let currentTime = Date.now();
 
@@ -36,4 +37,12 @@ setInterval(() => {
   updateDate(hours, hoursNumber);
   updateDate(minutes, minutesNumber);
   updateDate(seconds, secondsNumber);
+
+  if (remainingTime < 0) {
+    clearInterval(interval);
+    daysNumber.textContent = "00";
+    hoursNumber.textContent = "00";
+    minutesNumber.textContent = "00";
+    secondsNumber.textContent = "00";
+  }
 }, 1000);
